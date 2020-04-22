@@ -115,15 +115,18 @@
 то в объекте item создать поле priceWithDiscount и записать туда цену с учетом скидки и вывести ее в консоль, 
 обратите внимание что поля discount и price это строки и вам из них нужно получить числа чтобы выполнить расчет. 
 иначе если поля discount нет то вывести просто поле price в консоль.*/
-    let item = { name: 'Intel core i7', price: '200$', discount: NaN }
+    let item = { name: 'Intel core i7', price: '200$', discount: '15%' }
     let priceNew;
-    if (item.discount != NaN, item.price != NaN){
-        let moneyDiskont = Number(item.price.replace(/\D+/g,""))*(parseInt(item.discount)/100);
+    
+        if (item.discount){
+            let moneyDiskont = Number(item.price.replace(/\D+/g,""))*(parseInt(item.discount)/100);
+            item.priceWithDiscount = parseInt(item.price) - moneyDiskont + '$';   
+            console.log(item); 
+            } 
+        else console.log (item.price)
         
-        item.priceWithDiscount = parseInt(item.price) - moneyDiskont + '$';
-    } else (item.discount === NaN)
-    console.log(item.price);
-
+        
+         
 /*
 Дан следующий код:
 
