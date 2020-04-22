@@ -103,14 +103,26 @@
 
 /*Дан объект let car = { name: 'Lexus', age: 10, create: 2008, needRepair: false }. 
 Написать условие если возраст машины больше 5 лет то нужно вывести в консоль сообщение 'Need Repair' и свойство needRepair в объекте car изменить на true; иначе изменить на false.*/
-    let car = { name: 'Lexus', age: 10, create: 2008, needRepair: false }        
-
+    let car = { name: 'Lexus', age: 10, create: 2008, needRepair: false }      
+    
+    if (car.age > 5) {
+        console.log('Need Repair'), (car.needRepair = true)
+    }   else car.needRepair = false;
+    console.log(car);
+    
 /*Дан объект let item = { name: 'Intel core i7', price: '100$', discount: '15%' }. 
-Написать условие если у item есть поле discount и там есть значение которое не NaN а также есть поле price значение которого также не NaN то в объекте item создать поле priceWithDiscount и записать туда цену с 
-учетом скидки и вывести ее в консоль, обратите внимание что поля discount и price это строки и вам из них нужно получить числа чтобы выполнить расчет. 
+Написать условие если у item есть поле discount и там есть значение которое не NaN а также есть поле price значение которого также не NaN 
+то в объекте item создать поле priceWithDiscount и записать туда цену с учетом скидки и вывести ее в консоль, 
+обратите внимание что поля discount и price это строки и вам из них нужно получить числа чтобы выполнить расчет. 
 иначе если поля discount нет то вывести просто поле price в консоль.*/
-    let item = { name: 'Intel core i7', price: '100$', discount: '15%' }
-
+    let item = { name: 'Intel core i7', price: '200$', discount: NaN }
+    let priceNew;
+    if (item.discount != NaN, item.price != NaN){
+        let moneyDiskont = Number(item.price.replace(/\D+/g,""))*(parseInt(item.discount)/100);
+        
+        item.priceWithDiscount = parseInt(item.price) - moneyDiskont + '$';
+    } else (item.discount === NaN)
+    console.log(item.price);
 
 /*
 Дан следующий код:
