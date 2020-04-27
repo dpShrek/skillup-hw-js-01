@@ -18,4 +18,4 @@ do {
     totals += input;
 }
 while (input);
-alert(`Общая сумма чисел равна ${totals}`);
+alert("Общая сумма чисел равна " + totals + " !");
